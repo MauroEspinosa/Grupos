@@ -1,0 +1,320 @@
+﻿.grande{
+  display: inherit !important;
+}
+
+body{
+ background-color: #F3F3F3;
+ margin: 0;
+ padding: 0;
+}
+
+img{
+  max-width: 100%;
+}
+
+
+div#container div#single-head, div#items{
+  float: left;
+}
+
+div#container div#single-head, div#vacio{
+  float: left;
+}
+
+label{
+  color: inherit;
+  font-size: inherit;
+}
+
+div#single-head{
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #F2F2F2;
+  background-color: #575656;
+  width: 30%;
+  height: 100%;
+  position: fixed;
+  background: rgba(20,19,19,1);
+  background: -moz-linear-gradient(-45deg, rgba(20,19,19,1) 0%, rgba(59,59,59,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(20,19,19,1)), color-stop(100%, rgba(59,59,59,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(20,19,19,1) 0%, rgba(59,59,59,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(20,19,19,1) 0%, rgba(59,59,59,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(20,19,19,1) 0%, rgba(59,59,59,1) 100%);
+  background: linear-gradient(135deg, rgba(20,19,19,1) 0%, rgba(59,59,59,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141313', endColorstr='#3b3b3b', GradientType=1 );
+}
+
+div#container div#single-head div#subscribe{
+  background: red;
+  width: 100%;
+  cursor: pointer;
+  background-color: #159393;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  font-family: 'Pavanam', sans-serif;
+}
+
+div#single-head h2{
+  font-family: 'Pavanam', sans-serif;
+  font-size: 250%;
+  text-align: center;
+  padding: 5%;
+  margin: 0;
+}
+
+div#single-head div#info{
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  padding-bottom: 7%;
+  border-bottom: 2px solid black;
+  width: 95%;
+  margin: auto;
+}
+
+div#single-head div#info i{
+  font-size: 90%;
+}
+
+div#single-head div#info span:first-child{
+  margin-right: 20px;
+  list-style-type: circle;
+}
+
+div#container div#single-head div#subir{
+  width: 90%;
+  margin: auto;
+}
+
+div#container div#single-head div#subir form{
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+
+div#container div#single-head div#subir form label{
+  font-family: 'Raleway', sans-serif;
+}
+
+div#container div#single-head textarea{
+  width: 100%;
+  margin: auto;
+  height: 100px;
+  border: none;
+  border: 2px solid #F6F1F1;
+  background-color: inherit;
+  color: white;
+  margin-bottom: 10px;
+  margin-top: 7px;
+}
+
+div#container div#single-head div#subir form div#añadir-file{
+  height: 20px;
+  text-align: center;
+  margin-bottom: 8px;
+  font-family: 'Pavanam', sans-serif;
+  font-size: 95%;
+  color: black;
+  padding-bottom: 2px;
+  border-radius: 6px;
+  background: rgba(255,255,255,1);
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(199,199,199,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(1%, rgba(255,255,255,1)), color-stop(100%, rgba(199,199,199,1)));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(199,199,199,1) 100%);
+  background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(199,199,199,1) 100%);
+  background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(199,199,199,1) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(199,199,199,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c7c7c7', GradientType=0 );
+}
+
+div#container div#single-head div#subir form div#añadir-file input[type=file]{
+  position: relative;
+  margin: 0;
+  margin-top: -20px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+div#container div#single-head div#subir form input[type=submit]{
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  border: none;
+  color: black;
+  font-size: 95%;
+  background: rgba(255,255,255,1);
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(199,199,199,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(1%, rgba(255,255,255,1)), color-stop(100%, rgba(199,199,199,1)));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(199,199,199,1) 100%);
+  background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(199,199,199,1) 100%);
+  background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(199,199,199,1) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(199,199,199,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c7c7c7', GradientType=0 );
+}
+
+div#container div#single-head div#miembros{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 18px;
+  border-top: 2px solid black;
+}
+
+div#container div#single-head div#miembros p{
+  margin-bottom: 3px;
+  margin-top: 5px;
+  font-family: 'Raleway', sans-serif;
+}
+
+div#container div#single-head ul#miembros{
+  width: 100%;
+  margin: auto;
+  max-height: 35%;
+  overflow: scroll;
+}
+
+div#container div#single-head ul#miembros::-webkit-scrollbar{
+  height: 0px;
+  width: 8px;
+}
+
+div#container div#single-head ul#miembros::-webkit-scrollbar-track{
+  background: white;
+}
+
+div#container div#single-head ul#miembros::-webkit-scrollbar-thumb{
+  background-color: #727272;
+    border-radius: 6px;
+}
+
+
+div#container div#single-head ul#miembros li{
+  color: black;
+  height: 30px;
+  background-color: #F0F0F0;
+}
+/*
+div#subir{
+  border: 1px solid #B8B7B7;
+  margin-top: 10px;
+  border-radius: 10px;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div#subir form{
+  margin: 0;
+}
+
+div#subir div#submit{
+  display: flex;
+  justify-content: flex-end;
+}
+
+div#subir form .boton{
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  padding: 7px;
+  margin: 5px;
+  text-align: right;
+  cursor: pointer;
+  background-color: #575656;
+  color: #F2F2F2;
+}
+
+div#subir form .subir{
+  font-family: 'Raleway', sans-serif;
+  padding: 4px;
+  margin-top: 5px;
+  background-color: #575656;
+  color: #F2F2F2;
+}
+
+div#subir form input[type=text]{
+  width: 320px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+div#subir form input[type=file]{
+  width: 413px;
+  background-color: #575656;
+}
+
+div#subir form span{
+  font-family: 'Raleway', sans-serif;
+}
+*/
+
+div#items, div#vacio{
+  width: 65%;
+  margin-left: 32.5%;
+}
+
+div#container div#vacio{
+  text-align: center;
+  margin-top: 15%;
+  color: #333333;
+}
+
+div#container div#suscribete{
+  margin-left: 32.5%;
+  text-align: center;
+  width: 65%;
+  margin-top: 15%;
+  position: absolute;
+}
+
+div#container div#suscribete h2{
+  margin: 0;
+}
+
+div.archivos{
+  width: 90%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+div.archivos p{
+  border-bottom: 1px solid #B8B7B7;
+  margin-bottom: 3px;
+  padding: 2%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 110%;
+}
+
+div.archivos img{
+  max-height: 500px;
+  margin-left: auto;;
+  margin-right: auto;
+}
+
+div.archivos div#imagen{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div#container div#items div.archivos a{
+  font-size: 180%;
+  text-decoration: underline;
+}
+
+div#container div#items div.archivos input.respuesta{
+  width: 80%;
+  margin-left: 15px;
+}
+
+div#container div#items div.archivos ul.respuestas{
+  padding-left: 5%;
+}
+
+div#container div#items div.archivos ul.respuestas li div.respuesta{
+  border-top: 1px solid #CFCFCF;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}

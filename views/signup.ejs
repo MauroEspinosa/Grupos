@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" href="/css/estilo_signup.css"/>
+<script>
+ $(document).ready(function(){
+
+ });
+</script>
+</head>
+<body>
+<div id="iniciar">
+<form method="post" action="/iniciar">
+  <label for="correo">Correo:</label>
+  <input type="text" id="correo" name="correo" required/></br>
+  <label for="contraseña">Contraseña:</label>
+  <input type="password" id="contraseña" name="contraseña" required/></br>
+  <input type="submit" value="Iniciar Sesion"/>
+</form>
+</div>
+
+<div id="registro">
+<form method="post" action="/registrar">
+  <label for="nombre">Nombre completo: </label>
+  <input type="text" id="nombre" name="nombre" required/></br>
+
+  <label for="correo">Correo:</label>
+  <input type="text" id="correo" name="correo" required/></br>
+
+  <label for="contraseña">Contraseña:</label>
+  <input type="password" id="contraseña" name="contraseña" required/></br>
+
+  <input type="submit" value="Registrarme"/>
+</form>
+</div>
+</body>
+</html>

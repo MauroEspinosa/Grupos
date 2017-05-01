@@ -1,0 +1,63 @@
+<html>
+</head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Pavanam" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <script   src="https://code.jquery.com/jquery-2.2.1.min.js"   integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="   crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/visit_perfil.css"/>
+</head>
+<body>
+<div id="container">
+<div id="foto">
+<%if(doc.extension=="" || doc.extension==null){%>
+    <img style="background-image:url('/imagenes/usuario.png')"/>
+<%}%>
+<%if(doc.extension=="jpg" || doc.extension=="png"){%>
+    <img style="background-image:url('/imagenes/<%=doc._id%>.<%=doc.extension%>')"/>
+<%}%>
+</div>
+<!--
+<form action="/actualizar_info">
+  <label for="nombre">Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input type="text" value="<%=doc.nombre%>"  id="nombre" name="nombre" required/></br>
+
+  <label for="descripcion">Descripcion</label>
+  <input type="text" id="descripcion" value="<%=doc.descripcion%>" name="descripcion"/></br>
+
+  <label for="edad">Edad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input type="text" id="edad" value="<%=doc.edad%>" name="edad"/></br>
+
+  <label for="carrera">Carrera&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input type="text" id="carrera" value="<%=doc.carrera%>" name="carrera"/></br>
+
+  <label for="semestre">Semestre&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input type="text" id="semetre" value="<%=doc.semestre%>" name="semestre"/></br>
+-->
+
+  <div id="nombre-social">
+    <input type="text" value="<%=doc.nombre%>" id="nombre" name="nombre" required/>
+    <a href="<%=doc.instagramk%>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    <a href="<%=doc.facebook%>"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+  </div>
+
+  <div id="area">
+    <p>Descripcion: </p>
+    <%if(typeof doc.descripcion=="undefined" || doc.descripcion==""){%>
+      <textarea placeholder="Aqui puedes poner algo sobre ti. Tu edad, carrera, que te gusta hacer, etc." id="descripcion" name="descripcion"/></textarea></br>
+    <%}%>
+    <%if(typeof doc.descripcion!="undefined" && doc.descripcion!=""){%>
+      <textarea id="descripcion" name="descripcion"><%=doc.descripcion%></textarea></br>
+    <%}%>
+  </div>
+
+  <div id="grupos">
+    <p>Grupos a los que esta suscrito este usuario:</p>
+    <ul>
+    <%for(i=0;i<doc.grupos.length;i++){%>
+      <li><a href="/grupos/<%=doc.grupos[i]%>"><%=doc.grupos[i]%></a></li>
+    <%}%>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

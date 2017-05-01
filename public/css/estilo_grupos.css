@@ -1,0 +1,134 @@
+body{
+  padding: 0;
+  background: url("fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div#link-nuevo-grupo{
+  width: 350px;
+  margin: auto;
+  font-family: 'Raleway', sans-serif;
+  text-align: right;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+div#link-nuevo-grupo a{
+  text-decoration: none;
+  color: #F6F1F1;
+  margin-right: 15px;
+}
+
+div#link-nuevo-grupo a:hover{
+  text-decoration: underline;
+}
+
+
+div#principal form{
+  margin-top: 40px;
+}
+
+div#principal{
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #F6F1F1;
+  font-family: 'Raleway', sans-serif;
+  font-size: 140%;
+  padding-top: 14%;
+  padding-bottom: 14%;
+  width: 350px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+div#principal input[type=search]{
+  border: none;
+  border-bottom: 2px solid #F6F1F1;;
+  width: auto;
+  background-color: inherit;
+  width: 60px;
+  color: white;
+}
+
+div#principal input[type=submit]{
+ width: 100%;
+ margin-top: 40px;
+ font-family: 'Raleway', sans-serif;
+ padding: 3px;
+ border: none;
+}
+
+div#principal input[type=submit]:hover{
+ color: white;
+ background-color: #222;
+ transition: all 0.2s;
+}
+
+
+div#link-buscar-grupo{
+  width: 330px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: 'Raleway', sans-serif;
+  text-align: right;
+  margin: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+div#link-buscar-grupo a{
+  text-decoration: none;
+  color: white;
+  margin-right: 5px;
+  font-size: 90%;
+}
+
+div#link-buscar-grupo a:hover{
+  text-decoration: underline;
+}
+
+form#form-nuevo-grupo{
+  width: 330px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  padding-bottom: 6%;
+  padding-top: 6%;
+  margin: auto;
+  text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  align-items: center;
+  font-size: 120%;
+}
+
+
+form#form-nuevo-grupo input[type="text"]{
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #F6F1F1;;
+  margin: 20px;
+  color: white;
+  width: 80%;
+}
+
+form#form-nuevo-grupo input[type="submit"]{
+  width: 80%;
+  margin: auto;
+  border: none;
+  padding: 3px;
+  margin-bottom: 0;
+}
+
+form#form-nuevo-grupo input[type=submit]:hover{
+ color: white;
+ background-color: #222;
+ transition: all 0.2s;
+}

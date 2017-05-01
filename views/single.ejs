@@ -1,0 +1,196 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pavanam" rel="stylesheet">
+  <script   src="https://code.jquery.com/jquery-2.2.1.min.js"   integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="   crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="/css/materialize.min.css">
+  <link rel="stylesheet" href="/css/hiddens.css">
+  <!--<link rel="stylesheet" href="/css/estilo_grupos2.css"/>-->
+  <link rel="stylesheet" href="/css/estilo_grupos2_grande.css" media="screen and (min-width:800px)"/>
+  <link rel="stylesheet" href="/css/estilo_grupos2_chico.css" media="screen and (max-width:799px)"/>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>var socket=io();</script>
+<script>
+/*
+$(document).ready(function(){
+    var r=Math.floor(Math.random()*(255-0+1) +0);
+    var g=Math.floor(Math.random()*(255-0+1) +0);
+    var b=Math.floor(Math.random()*(255-0+1) +0);
+    var color="rgba("+r+","+g+","+b+","+"0.9"+")";
+    $("div#single-head").css("background-color", color);
+    $("form .boton, form .subir").css("background-color", color);
+});
+*/
+
+$(document).ready(function(){
+
+  $("div#container div#single-head div#subscribe").hide();
+
+  $("div#container div#nav i").click(function(){
+    var margen=$("div#container div#single-head").css("margin-left");
+    if(margen=="-1000px"){
+      $("div#container div#single-head").animate({marginLeft:"0px"},800);
+    }
+    if(margen=="0px"){
+      $("div#container div#single-head").animate({marginLeft:"-1000px"},800);
+    }
+  });
+
+  $("div#menu i#close").click(function(){
+      $("div#menu").animate({marginLeft:"-1000px"},800);
+  });
+
+  socket.on("nuevo",function(data){
+    console.log(data);
+  });
+
+  $("div#container div#single-head div#subscribe").click(function(){
+    var data={id:$("div#container div#single-head span.ide").attr("id"),
+              grupo:$("div#container div#single-head div#subscribe").attr("name")};
+    socket.emit("subscribe",data);
+  });
+
+  $("div#container div#items div.archivos a.res").click(function(){
+    var id=$(this).attr("id");
+    var res={respuesta:$("div#container div#items div#"+id+" input").val(),
+             publicacion:id};
+    if(res.respuesta!=""){
+      socket.emit("comentario",res);
+      $("div#container div#items div#"+id+" input").val("");
+      $("div#container div#items div#"+id+" ul").append("<li><div class='respuesta'>"+res.respuesta+"</div></li>");
+    }
+  });
+
+  socket.on("guardado",function(user){
+    $("div#container div#subir ul#miembros").prepend("<li><a href=/perfil/" +user._id +"</a>" +user.nombre +"</li>");
+    alert("Suscrito. Actualiza la pagina");
+  });
+
+  socket.on("suscrito", function(){
+    alert("Ya estas suscrito a este grupo");
+  });
+});
+</script>
+</head>
+
+<body>
+<div id="fb-root"></div>
+<!--
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=1105666872833636";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+-->
+
+<div id="container">
+<div id="nav" class="chico">
+  <i class="fa fa-bars" aria-hidden="true"></i>
+  <ul>
+    <li><a href="/">Buscar Grupo</a></li>
+    <li><a href="/perfil">Perfil</a></li>
+  </ul>
+</div>
+
+<div id="single-head">
+<%if(typeof user!="undefined"){%>
+  <span style="display:none" id="<%=user%>" class="ide"></span>
+  <div id="subscribe" name="<%=info.grupo%>"><span>Suscribirme a este grupo&nbsp;</span><i class="fa fa-user-plus" aria-hidden="true"></i></div>
+<%}%>
+ <h2><%=info.grupo%></h2>
+ <div id="info">
+   <span><i class="material-icons">details</i><%=info.materia%></span>
+   <span><i class="material-icons">details</i><%=info.profesor%></span>
+ </div>
+
+ <div id="subir">
+   <form  action="/grupos/<%=info.grupo%>/nuevo-post" method="POST" enctype="multipart/form-data">
+     <label for="titulo">Comentario: </label><br/>
+     <textarea id="titulo" name="titulo" required></textarea><br/>
+     <div id="añadir-file">
+       <label for="archivo">Añadir un archivo o una imagen&nbsp;<i class="fa fa-upload" aria-hidden="true"></i> </label><br/>
+       <input class="subir" type="file" id="archivo" name="archivo" value="Subir"/><br/>
+     </div>
+     <input class="boton" type="submit" value="Publicar" id="pub">
+   </form>
+  </div>
+
+   <div id="miembros">
+   <p>Miembros</p>
+   <ul id="miembros" class="collection">
+     <%for(i=info.miembros.length-1; i>=0; i--){%>
+       <!--<li><a href="/perfil/<%=info.miembros[i].id%>"><p><%=info.miembros[i].nombre%></p></a></li>-->
+      <li class="collection-item avatar">
+      <img src="/imagenes/<%=info.miembros[i]._id%>.<%=info.miembros[i].extension%>" alt="" class="circle">
+      <span class="title"><%=info.miembros[i].nombre%></span>
+      <p><a href="/perfil/<%=info.miembros[i].id%>">Ver perfil</a></p>
+      <i class=" secondary-content material-icons">account_circle</i>
+    </li>
+     <%}%>
+   </ul>
+  </div>
+</div>
+
+
+
+<div class="fb-comments" data-href="http://www.xyz.com/grupos/<%=info.grupo%>" data-order-by="time" data-width="100%" data-colorscheme="dark" data-numposts="5" data-mobile="auto-detected"></div>
+
+<%if(suscrito){%>
+<%if(imagenes.length<1){%>
+  <div id="vacio">
+    <h3 class="chico">Aun no hay publicaciones en este grupo</h3>
+    <h1 class="grande">Aun no hay publicaciones en este grupo</h1>
+  </div>
+<%}%>
+
+<%if(imagenes.length>0){%>
+<div id="items">
+  <%for(i=imagenes.length-1;i>=0;i--){%>
+    <div class="archivos" id="<%=imagenes[i]._id%>">
+      <p id="titulo"><%=imagenes[i].comentario%></p>
+      <%if(imagenes[i].extension=="jpg" || imagenes[i].extension=="png"){%>
+        <div id="imagen">
+        <img src="/imagenes/<%=imagenes[i]._id%>.<%=imagenes[i].extension%>">
+        </div>
+      <%}else{%>
+        <a href="/descargar/<%=imagenes[i]._id%>"><%=imagenes[i].nombre%></a></br>
+      <%}%>
+      <input type="text" class="respuesta" id="<%=imagenes[i]._id%>" placeholder="Responder"/>
+      <!--<input type="button" class="res" id="<%=imagenes[i]._id%>" value="Comentar">-->
+      <!--<a class="waves-effect waves-light btn res" id="<%=imagenes[i]._id%>"><i class="fa fa-paper-plane" aria-hidden="true"></i></i></a>-->
+      <ul class="respuestas" id="<%=imagenes[i]._id%>">
+        <%for(a=0;a<imagenes[i].respuestas.length;a++){%>
+          <li><div class="respuesta"><%=imagenes[i].respuestas[a]%></div></li>
+        <%}%>
+      </ul>
+    </div>
+  <%}%>
+<%}%>
+<%}%>
+
+<%if(!suscrito){%>
+  <script>
+  $(document).ready(function(){
+    $("div#container div#single-head div#subir input#archivo,input#pub").prop("disabled",true);
+    $("div#container div#single-head div#subscribe").show();
+  });
+  </script>
+  <div id="suscribete">
+    <h3 class="chico">Debes suscribirte a este grupo para poder publicar y ver las publicaciones</h3>
+    <h2 class="grande">Debes suscribirte a este grupo para poder publicar y ver las publicaciones</h2>
+  </div>
+<%}%>
+</div>
+</div>
+
+
+
+</body>
+</html>

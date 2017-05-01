@@ -1,0 +1,97 @@
+body{
+  padding: 0;
+  background: url("fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div#iniciar{
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #F6F1F1;
+  font-family: 'Raleway', sans-serif;
+  font-size: 140%;
+ text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-right: 5%;
+}
+
+div#iniciar input[type=text],input[type=password]{
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #F6F1F1;;
+  margin: 20px;
+  color: white;
+  width: 80%;
+}
+
+div#iniciar input[type=submit]{
+  width: 80%;
+  color: white;
+  border: none;
+  padding: 5px;
+  margin-top: 10px;
+  background: rgba(118,189,47,1);
+  background: -moz-linear-gradient(-45deg, rgba(118,189,47,1) 0%, rgba(43,156,88,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(118,189,47,1)), color-stop(100%, rgba(43,156,88,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(118,189,47,1) 0%, rgba(43,156,88,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(118,189,47,1) 0%, rgba(43,156,88,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(118,189,47,1) 0%, rgba(43,156,88,1) 100%);
+  background: linear-gradient(135deg, rgba(118,189,47,1) 0%, rgba(43,156,88,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76bd2f', endColorstr='#2b9c58', GradientType=1 );
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+}
+
+div#iniciar form{
+    width: 300px;
+}
+
+div#registro{
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #F6F1F1;
+  font-family: 'Raleway', sans-serif;
+  font-size: 110%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  text-align: center;
+}
+
+div#registro form{
+  width: 300px;
+}
+
+div#registro input[type=text],input[type=password]{
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #F6F1F1;;
+  margin: 15px;
+  color: white;
+  width: 80%;
+}
+
+div#registro input[type=submit]{
+  width: 80%;
+  color: white;
+  border: none;
+  padding: 5px;
+  background: rgba(149,153,145,1);
+background: -moz-linear-gradient(-45deg, rgba(149,153,145,1) 0%, rgba(70,71,70,1) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(149,153,145,1)), color-stop(100%, rgba(70,71,70,1)));
+background: -webkit-linear-gradient(-45deg, rgba(149,153,145,1) 0%, rgba(70,71,70,1) 100%);
+background: -o-linear-gradient(-45deg, rgba(149,153,145,1) 0%, rgba(70,71,70,1) 100%);
+background: -ms-linear-gradient(-45deg, rgba(149,153,145,1) 0%, rgba(70,71,70,1) 100%);
+background: linear-gradient(135deg, rgba(149,153,145,1) 0%, rgba(70,71,70,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959991', endColorstr='#464746', GradientType=1 );
+-webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+}

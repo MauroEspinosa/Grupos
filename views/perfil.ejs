@@ -1,0 +1,161 @@
+<html>
+</head>
+  <meta name="viewport" content="width=device-width initial-scale=1.0"/>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Pavanam" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <script   src="https://code.jquery.com/jquery-2.2.1.min.js"   integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="   crossorigin="anonymous"></script>
+  <!--<link rel="stylesheet" href="/css/estilo_perfil.css"/>-->
+  <link rel="stylesheet" href="/css/hiddens.css">
+  <link rel="stylesheet" href="/css/estilo_perfil_grande.css" media="screen and (min-width:800px)"/>
+  <link rel="stylesheet" href="/css/estilo_perfil_chico.css" media="screen and (max-width:799px)"/>
+  <script>
+  $(document).ready(function(){
+    $("div#container div#notificaciones").hide();
+
+    $("div#nav ul li i.fa-bell").click(function(){
+      $("div#container div#notificaciones").slideToggle();
+    });
+
+    $("div#container div#nombre-social i.fa-bell").click(function(){
+      $("div#container div#notificaciones").slideToggle();
+    });
+  });
+  </script>
+</head>
+<body>
+<div id="nav" class="chico">
+  <ul>
+    <li><i class="fa fa-bell" aria-hidden="true"></i></li>
+    <li><a href="/"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+  </ul>
+</div>
+
+<div id="container">
+<div id="foto" class="grande">
+<%if(doc.extension=="" || doc.extension==null){%>
+    <img style="background-image:url('/imagenes/usuario.png')"/>
+<%}%>
+<%if(doc.extension=="jpg" || doc.extension=="png"){%>
+    <img style="background-image:url('/imagenes/<%=doc._id%>.<%=doc.extension%>')"/>
+<%}%>
+<form class="grande" method="post" action="/actualizar_foto" enctype="multipart/form-data">
+  <div id="subir">
+    <p style="margin:0">Seleccionar</p>
+    <input type="file" id="foto" name="foto"/></br>
+  </div>
+  <input type="submit" id="btn_subir" value="Guardar nueva foto"/>
+</form>
+</div>
+
+<div class="chico" id="info">
+  <%if(doc.extension=="" || doc.extension==null){%>
+      <div><img style="background-image:url('/imagenes/usuario.png')"/></div>
+  <%}%>
+  <%if(doc.extension=="jpg" || doc.extension=="png"){%>
+      <div id="nombre-foto" style="background-image:url('/imagenes/<%=doc._id%>.<%=doc.extension%>')">
+        <p><%=doc.nombre%></p>
+      </div>
+  <%}%>
+
+  <%if(typeof doc.descripcion=="undefined" || doc.descripcion==""){%>
+    <textarea id="descripcion" placeholder="Aqui puedes poner algo sobre ti. Tu edad, carrera, que te gusta hacer, etc." id="descripcion" name="descripcion"/></textarea></br>
+  <%}%>
+  <%if(typeof doc.descripcion!="undefined" && doc.descripcion!=""){%>
+    <textarea id="descripcion" name="descripcion"><%=doc.descripcion%></textarea></br>
+  <%}%>
+</div>
+
+<!--
+<form action="/actualizar_info">
+  <label for="nombre">Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input type="text" value="<%=doc.nombre%>"  id="nombre" name="nombre" required/></br>
+
+  <label for="descripcion">Descripcion</label>
+  <input type="text" id="descripcion" value="<%=doc.descripcion%>" name="descripcion"/></br>
+
+  <label for="edad">Edad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input type="text" id="edad" value="<%=doc.edad%>" name="edad"/></br>
+
+  <label for="carrera">Carrera&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input type="text" id="carrera" value="<%=doc.carrera%>" name="carrera"/></br>
+
+  <label for="semestre">Semestre&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input type="text" id="semetre" value="<%=doc.semestre%>" name="semestre"/></br>
+-->
+
+
+<form action="/actualizar_info" class="grande">
+  <div id="nombre-social">
+    <input type="text" value="<%=doc.nombre%>" id="nombre" name="nombre" required/>
+    <i class="fa fa-bell" aria-hidden="true"></i>
+  </div>
+
+  <div id="area" class="grande">
+    <p>Descripcion: </p>
+    <%if(typeof doc.descripcion=="undefined" || doc.descripcion==""){%>
+      <textarea placeholder="Aqui puedes poner algo sobre ti. Tu edad, carrera, que te gusta hacer, etc." id="descripcion" name="descripcion"/></textarea></br>
+    <%}%>
+    <%if(typeof doc.descripcion!="undefined" && doc.descripcion!=""){%>
+      <textarea id="descripcion" name="descripcion"><%=doc.descripcion%></textarea></br>
+    <%}%>
+  </div>
+
+  <p>Redes sociales: </p>
+<!-- null sirve para los numeros
+  <%if(doc.edad==null){%>
+    <input type="text" placeholder="Link a tu facebook" id="edad" name="edad"/></br>
+  <%}%>
+  <%if(doc.edad!=null){%>
+    <input type="text" value="<%=doc.edad%>" id="edad" name="edad"/></br>
+  <%}%>
+-->
+  <%if(typeof doc.facebook=="undefined" || doc.facebook==""){%>
+    <input type="text" placeholder="Link a tu facebook" id="facebook"  name="facebook"></br>
+  <%}%>
+  <%if(typeof doc.facebook!="undefined" && doc.facebook!=""){%>
+    <input type="text" value="<%=doc.facebook%>" id="facebook" name="facebook"></br>
+  <%}%>
+
+  <%if(typeof doc.instagram=="undefined" || doc.instagram==""){%>
+    <input type="text" placeholder="Link a tu instagram" id="instagram" name="instagram"></br>
+  <%}%>
+  <%if(typeof doc.instagram!="undefined" && doc.instagram!=""){%>
+    <input type="text" value="<%=doc.semestre%>" id="instagram" name="instagram"></br>
+  <%}%>
+
+  <div id="guardar">
+    <input type="submit" value="Guardar"/>
+  </div>
+</form>
+
+<div id="grupos">
+  <p>Grupos en los que te has suscrito:</p>
+  <ul>
+  <%for(i=0;i<doc.grupos.length;i++){%>
+    <li><a href="/grupos/<%=doc.grupos[i]%>"><%=doc.grupos[i]%></a><a href="/unsuscribe?grupo=<%=doc.grupos[i]%>"><i class="fa fa-times" aria-hidden="true"></i></a></li>
+  <%}%>
+  </ul>
+  </br>
+</div>
+
+<div id="notificaciones">
+<ul>
+<%if(doc.notificaciones.length!=0){%>
+  <%for(i=doc.notificaciones.length-1; i>=0; i--){%>
+    <li><a href="/grupos/<%=doc.notificaciones[i].grupo%>/<%=doc.notificaciones[i].id%>">
+    <h4><%=doc.notificaciones[i].info%> en el grupo <%=doc.notificaciones[i].grupo%></h4>
+    </a></li>
+  <%}%>
+<%}else{%>
+  <li><h4 style="color:#373737">No tienes notificaciones</h4></li>
+<%}%>
+</ul>
+</div>
+
+
+
+</div>
+</body>
+</html>

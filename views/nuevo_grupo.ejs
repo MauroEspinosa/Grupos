@@ -1,0 +1,29 @@
+<html>
+<head>
+ <%include head.ejs%>
+</head>
+<body>
+
+<div>
+<div id="link-buscar-grupo">
+  <a href="/">Buscar grupo</a>
+</div>
+
+<div id="x"> <!--para juntar los divs y que funcion el display flex-->
+<form  id="form-nuevo-grupo" method="POST" action="/crear">
+
+  <label for="grupo">Grupo:</label>
+  <input type="text" style="text-transform:uppercase" onchange="javascript:this.value=this.value.toUpperCase()" class="input-principal" id="grupo" name="grupo" required/><br/>
+
+  <label for="grupo">Materia:</label>
+  <input type="text"  class="input-principal" id="materia" name="materia" required/><br/>
+
+  <label for="profesor">Profesor:</label>
+  <input type="text" class="enviar"  id="profesor" name="profesor" required/><br/>
+
+  <input type="submit" value="Guardar"/>
+</form>
+</div>
+</div>
+
+</body>

@@ -1,0 +1,22 @@
+<html>
+<head>
+ <%include head.ejs%>
+</head>
+
+<body>
+<div><!--para juntar los divs y que funcion el display flex-->
+<div id="link-nuevo-grupo">
+  <a href="/nuevo-grupo">Crear grupo</a>
+  <a href="/perfil">Mi perfil</a>
+</div>
+<div id="principal">
+  <form method="POST" action="/buscar">
+    <span>Buscar un grupo:</span>
+    <input type="search" id="search" required class="input-principal" style="text-transform:uppercase" onchange="javascript:this.value=this.value.toUpperCase()" name="busqueda"><br/>
+    <input type="submit" class="enviar" value="Buscar"/>
+  </form>
+</div>
+</div>
+</body>
+
+</html>
