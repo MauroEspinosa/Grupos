@@ -100,10 +100,7 @@ app.post("/iniciar",function(req,res){
 });
 
 app.get("/", function(req, res){
-  Imagen.find({},function(err,doc){
-    console.log(doc);
-  });
-  console.log(req.session.user);
+  
   res.render("home");
 })
 
