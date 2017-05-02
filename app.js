@@ -10,6 +10,7 @@ var formidable=require("express-formidable");
 var cookieSession=require("cookie-session");
 var User=require("./models/model_users");
 var fs=require("fs");
+var path = require ('path');
 
 
 app.use(bodyParser.json());
@@ -19,7 +20,8 @@ app.use(cookieSession({
   name:"session",
   keys:["key1","key2"]
 }));
-app.use(express.static("public"));
+app.set('views', path.join(process.cwd() +'/Views'));
+app.use(express.static(path.join(process.cwd() + '/public')));
 app.set("view engine", "ejs");
 
 
