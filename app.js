@@ -100,7 +100,10 @@ app.post("/iniciar",function(req,res){
 });
 
 app.get("/", function(req, res){
-
+  Imagen.find({},function(err,doc){
+    console.log(doc);
+  });
+  //dev console.log(req.session.user);
   res.render("home");
 })
 
@@ -294,7 +297,7 @@ app.get("/actualizar_info",function(req,res){
 });
 
 app.get("/eliminar",function(req,res){
-  User.remove({},function(err){
+  Imagen.remove({},function(err){
     res.redirect("/");
   });
 });
