@@ -261,7 +261,7 @@ app.post("/actualizar_foto",function(req,res){
   User.findOne({_id:req.session.user},function(err,doc){
     doc.extension=req.body.foto.name.split(".").pop();
     doc.save(function(err){
-      fs.renameSync(req.body.foto.path, path.join(process.cwd()+"/public/imagenes/"+doc._id+"."+doc.extension));
+      fs.renameSync(req.body.foto.path, __dirname+"/public/imagenes/"+doc._id+"."+doc.extension);
       res.redirect("/perfil");
     });
   });
