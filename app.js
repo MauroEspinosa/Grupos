@@ -20,7 +20,7 @@ app.use(cookieSession({
   name:"session",
   keys:["key1","key2"]
 }));
-app.set('views', path.join(process.cwd() +'/Views'));
+app.set('views', path.join(process.cwd() +'/views'));
 app.use(express.static(path.join(process.cwd() + '/public')));
 app.set("view engine", "ejs");
 
@@ -100,7 +100,7 @@ app.post("/iniciar",function(req,res){
 });
 
 app.get("/", function(req, res){
-  
+
   res.render("home");
 })
 
