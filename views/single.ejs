@@ -1,6 +1,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
   <meta name="theme-color" content="#159393">
   <meta name="viewport" content="width=device-width initial-scale=1.0"/>
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -9,7 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="/css/materialize.min.css">
+
   <link rel="stylesheet" href="/css/hiddens.css">
   <!--<link rel="stylesheet" href="/css/estilo_grupos2.css"/>-->
   <link rel="stylesheet" href="/css/estilo_grupos2_grande.css" media="screen and (min-width:800px)"/>
@@ -58,11 +59,11 @@ $(document).ready(function(){
 
   $("div#container div#items div.archivos a.res").click(function(){
     var id=$(this).attr("id");
-    var res={respuesta:$("div#container div#items div#"+id+" input").val(),
+    var res={respuesta:$("div#container div#items div#"+id+" textarea").val(),
              publicacion:id};
     if(res.respuesta!=""){
       socket.emit("comentario",res);
-      $("div#container div#items div#"+id+" input").val("");
+      $("div#container div#items div#"+id+" textarea").val("");
       $("div#container div#items div#"+id+" ul").append("<li><div class='respuesta'>"+res.respuesta+"</div></li>");
     }
   });
@@ -101,42 +102,7 @@ $(document).ready(function(){
 </div>
 
 <div id="single-head">
-<%if(typeof user!="undefined"){%>
-  <span style="display:none" id="<%=user%>" class="ide"></span>
-  <div id="subscribe" name="<%=info.grupo%>"><span>Suscribirme a este grupo&nbsp;</span><i class="fa fa-user-plus" aria-hidden="true"></i></div>
-<%}%>
- <h2><%=info.grupo%></h2>
- <div id="info">
-   <span><i class="material-icons">details</i><%=info.materia%></span>
-   <span><i class="material-icons">details</i><%=info.profesor%></span>
- </div>
-
- <div id="subir">
-   <form  action="/grupos/<%=info.grupo%>/nuevo-post" method="POST" enctype="multipart/form-data">
-     <label for="titulo">Comentario: </label><br/>
-     <textarea id="titulo" name="titulo" required></textarea><br/>
-     <div id="añadir-file">
-       <label for="archivo">Añadir un archivo o una imagen&nbsp;<i class="fa fa-upload" aria-hidden="true"></i> </label><br/>
-       <input class="subir" type="file" id="archivo" name="archivo" value="Subir"/><br/>
-     </div>
-     <input class="boton" type="submit" value="Publicar" id="pub">
-   </form>
-  </div>
-
-   <div id="miembros">
-   <p>Miembros</p>
-   <ul id="miembros" class="collection">
-     <%for(i=info.miembros.length-1; i>=0; i--){%>
-       <!--<li><a href="/perfil/<%=info.miembros[i].id%>"><p><%=info.miembros[i].nombre%></p></a></li>-->
-      <li class="collection-item avatar">
-      <img src="/imagenes/<%=info.miembros[i]._id%>.<%=info.miembros[i].extension%>" alt="" class="circle">
-      <span class="title"><%=info.miembros[i].nombre%></span>
-      <p><a href="/perfil/<%=info.miembros[i].id%>">Ver perfil</a></p>
-      <i class=" secondary-content material-icons">account_circle</i>
-    </li>
-     <%}%>
-   </ul>
-  </div>
+  <%include sidebar.ejs%>
 </div>
 
 
@@ -163,8 +129,8 @@ $(document).ready(function(){
       <%}else{%>
         <a href="/descargar/<%=imagenes[i]._id%>"><%=imagenes[i].nombre%></a></br>
       <%}%>
-      <input type="text" class="respuesta" id="<%=imagenes[i]._id%>" placeholder="Responder"/>
-      <!--<input type="button" class="res" id="<%=imagenes[i]._id%>" value="Comentar">-->
+      <textarea class="respuesta form-control" id="<%=imagenes[i]._id%>" placeholder="Responder" required/></textarea>
+      <a class="res"  id="<%=imagenes[i]._id%>"><input type="button" class="btn btn-primary res" value="Enviar"></a>
       <!--<a class="waves-effect waves-light btn res" id="<%=imagenes[i]._id%>"><i class="fa fa-paper-plane" aria-hidden="true"></i></i></a>-->
       <ul class="respuestas" id="<%=imagenes[i]._id%>">
         <%for(a=0;a<imagenes[i].respuestas.length;a++){%>

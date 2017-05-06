@@ -12,7 +12,7 @@ var User=require("./models/model_users");
 var fs=require("fs");
 var path = require ('path');
 
-
+//-----------------configuracion---------------
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(formidable.parse({keepExtensions:true}));
@@ -24,7 +24,7 @@ app.set('views', path.join(process.cwd() +'/views'));
 app.use(express.static(path.join(process.cwd() + '/public')));
 app.set("view engine", "ejs");
 
-
+//-------------------sockets-----------------------
 io.on("connection",function(socket){
   console.log("Usuario conectado");
   socket.on("subscribe",function(data){
@@ -59,7 +59,7 @@ io.on("connection",function(socket){
   });
 });
 
-
+//--------------------Rutas-----------------------------
 app.get("/signup",function(req,res){
   res.render("signup");
 });
@@ -91,7 +91,7 @@ app.post("/iniciar",function(req,res){
     if(user){
       req.session.user=user._id;
       //console.log(req.session.user);
-      res.redirect("/");
+      res.redirect("/perfil");
     }
     if(!user){
       res.send("Aun no estas registrado");
@@ -100,12 +100,19 @@ app.post("/iniciar",function(req,res){
 });
 
 app.get("/", function(req, res){
-  Imagen.find({},function(err,doc){
-    console.log(doc);
+  User.findOne({correo:req.body.correo,contraseña:req.body.contraseña},function(err,user){
+    if(req.session.user){
+      res.redirect("/perfil");
+    }
+    else{
+      res.redirect("/signup");
+    }
   });
-  //dev console.log(req.session.user);
+});
+
+app.get("/busqueda",function(req,res){
   res.render("home");
-})
+});
 
 app.get("/descargar/:id", function(req,res){
   Imagen.findById({_id: req.params.id}, function(err, doc){
@@ -297,7 +304,7 @@ app.get("/actualizar_info",function(req,res){
 });
 
 app.get("/eliminar",function(req,res){
-  Imagen.remove({},function(err){
+  User.remove({},function(err){
     res.redirect("/");
   });
 });

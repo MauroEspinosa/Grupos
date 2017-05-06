@@ -1,36 +1,60 @@
 <html>
 <head>
 <link rel="stylesheet" href="/css/estilo_signup.css"/>
+<script   src="https://code.jquery.com/jquery-2.2.1.min.js"   integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="   crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Pavanam" rel="stylesheet">
 <script>
  $(document).ready(function(){
+   $("div#home div#sign button#inicio").click(function(){
+     var x=$("div#home div#iniciar");
+     $("div#home div#iniciar").fadeIn();
+     $("div#home div#sign").html(x);
+   });
 
+   $("div#home div#sign button#registro").click(function(){
+     var x=$("div#home div#registro");
+     $("div#home").css("padding-bottom","0");
+     $("div#home div#registro").fadeIn();
+     $("div#home div#sign").html(x);
+   });
  });
 </script>
 </head>
 <body>
-<div id="iniciar">
-<form method="post" action="/iniciar">
-  <label for="correo">Correo:</label>
-  <input type="text" id="correo" name="correo" required/></br>
-  <label for="contraseña">Contraseña:</label>
-  <input type="password" id="contraseña" name="contraseña" required/></br>
-  <input type="submit" value="Iniciar Sesion"/>
-</form>
+<div id="home" style="height:auto">
+  <div id="iniciar" style="display:none">
+    <form method="post" action="/iniciar">
+    <label for="correo">Correo:</label>
+    <input type="text" id="correo" name="correo" required/></br>
+    <label for="contraseña">Contraseña:</label>
+    <input type="password" id="contraseña" name="contraseña" required/></br>
+    <input type="submit" value="Iniciar Sesion"/>
+    </form>
+  </div>
+
+  <div id="registro" style="display:none">
+    <form method="post" action="/registrar">
+    <label for="nombre">Nombre completo: </label>
+    <input type="text" id="nombre" name="nombre" required/></br>
+    <label for="correo">Correo:</label>
+    <input type="text" id="correo" name="correo" required/></br>
+    <label for="contraseña">Contraseña:</label>
+    <input type="password" id="contraseña" name="contraseña" required/></br>
+    <input type="submit" value="Registrarme"/>
+  </form>
 </div>
 
-<div id="registro">
-<form method="post" action="/registrar">
-  <label for="nombre">Nombre completo: </label>
-  <input type="text" id="nombre" name="nombre" required/></br>
+  <div id="descripcion">
+    <h1>Conecting people</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
 
-  <label for="correo">Correo:</label>
-  <input type="text" id="correo" name="correo" required/></br>
-
-  <label for="contraseña">Contraseña:</label>
-  <input type="password" id="contraseña" name="contraseña" required/></br>
-
-  <input type="submit" value="Registrarme"/>
-</form>
+  <div id="sign">
+    <h1></h1>
+    <h1></h1>
+    <button type="button" id="inicio">Iniciar Sesion</button>
+    <button type="button" id="registro">Registrarse</button>
+  </div>
 </div>
 </body>
 </html>

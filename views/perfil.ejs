@@ -28,7 +28,7 @@
 <div id="nav" class="chico">
   <ul>
     <li><i class="fa fa-bell" aria-hidden="true"></i></li>
-    <li><a href="/"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+    <li><a href="/busqueda"><i class="fa fa-search" aria-hidden="true"></i></a></li>
   </ul>
 </div>
 
@@ -49,16 +49,17 @@
 </form>
 </div>
 
-<div class="chico" id="info">
+<div class="chico" id="top">
   <%if(doc.extension=="" || doc.extension==null){%>
       <div><img style="background-image:url('/imagenes/usuario.png')"/></div>
   <%}%>
   <%if(doc.extension=="jpg" || doc.extension=="png"){%>
-      <div id="nombre-foto" style="background-image:url('/imagenes/<%=doc._id%>.<%=doc.extension%>')">
-        <p><%=doc.nombre%></p>
-      </div>
+      <div id="foto" style="background-image:url('/imagenes/<%=doc._id%>.<%=doc.extension%>')"></div>
   <%}%>
+</div>
 
+<div id="nombre_desc" class="chico">
+  <p><%=doc.nombre%></p>
   <%if(typeof doc.descripcion=="undefined" || doc.descripcion==""){%>
     <textarea id="descripcion" placeholder="Aqui puedes poner algo sobre ti. Tu edad, carrera, que te gusta hacer, etc." id="descripcion" name="descripcion"/></textarea></br>
   <%}%>
@@ -89,6 +90,7 @@
 <form action="/actualizar_info" class="grande">
   <div id="nombre-social">
     <input type="text" value="<%=doc.nombre%>" id="nombre" name="nombre" required/>
+    <a href="/busqueda"><i class="fa fa-search" aria-hidden="true"></i></a>
     <i class="fa fa-bell" aria-hidden="true"></i>
   </div>
 

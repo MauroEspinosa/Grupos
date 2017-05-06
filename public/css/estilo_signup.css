@@ -8,20 +8,71 @@ body{
   align-items: center;
 }
 
-div#iniciar{
-  background-color: rgba(0, 0, 0, 0.5);
+div#home{
+  font-size: 110%;
+  font-family: 'Pavanam', sans-serif;
+  color: #E0E3E1;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 4%;
+}
+
+div#home div#descripcion,div#sign{
+  float: left;
+}
+
+div#home div#descripcion{
+  width: 65%;
+  padding-top: 2%;
+  padding-bottom: 4%;
+}
+
+div#home div#descripcion h1,p{
+  margin: 0;
+}
+
+div#home div#sign{
+  width: 30%;
+  margin-left: 5%;
+}
+
+div#home div#sign button{
+  width: 90%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 7%;
+  font-family: 'Pavanam', sans-serif;
+  font-size: 100%;
+  margin-top: 35px;
+  background: rgba(21,147,147,1);
+  background: -moz-linear-gradient(top, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(21,147,147,1)), color-stop(100%, rgba(17,133,133,1)));
+  background: -webkit-linear-gradient(top, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  background: -o-linear-gradient(top, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  background: -ms-linear-gradient(top, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  background: linear-gradient(to bottom, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#159393', endColorstr='#118585', GradientType=0 );
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+div#home div#iniciar{
   color: #F6F1F1;
   font-family: 'Raleway', sans-serif;
-  font-size: 140%;
- text-align: center;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
   margin-right: 5%;
+  margin-top: 4%;
 }
 
-div#iniciar input[type=text],input[type=password]{
+div#home div#iniciar input[type=text],input[type=password]{
   background-color: transparent;
   border: none;
   border-bottom: 2px solid #F6F1F1;;
@@ -30,46 +81,37 @@ div#iniciar input[type=text],input[type=password]{
   width: 80%;
 }
 
-div#iniciar input[type=submit]{
+div#home div#iniciar input[type=submit]{
   width: 80%;
   color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 90%;
+  border-radius: 6px;
   border: none;
-  padding: 5px;
+  padding: 7px;
   margin-top: 10px;
-  background: rgba(118,189,47,1);
-  background: -moz-linear-gradient(-45deg, rgba(118,189,47,1) 0%, rgba(43,156,88,1) 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(118,189,47,1)), color-stop(100%, rgba(43,156,88,1)));
-  background: -webkit-linear-gradient(-45deg, rgba(118,189,47,1) 0%, rgba(43,156,88,1) 100%);
-  background: -o-linear-gradient(-45deg, rgba(118,189,47,1) 0%, rgba(43,156,88,1) 100%);
-  background: -ms-linear-gradient(-45deg, rgba(118,189,47,1) 0%, rgba(43,156,88,1) 100%);
-  background: linear-gradient(135deg, rgba(118,189,47,1) 0%, rgba(43,156,88,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76bd2f', endColorstr='#2b9c58', GradientType=1 );
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+  background: rgba(21,147,147,1);
+  background: -moz-linear-gradient(top, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(21,147,147,1)), color-stop(100%, rgba(17,133,133,1)));
+  background: -webkit-linear-gradient(top, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  background: -o-linear-gradient(top, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  background: -ms-linear-gradient(top, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  background: linear-gradient(to bottom, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#159393', endColorstr='#118585', GradientType=0 );
 }
 
-div#iniciar form{
-    width: 300px;
-}
-
-div#registro{
-  background-color: rgba(0, 0, 0, 0.5);
+div#home div#registro{
   color: #F6F1F1;
   font-family: 'Raleway', sans-serif;
-  font-size: 110%;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   text-align: center;
+  margin-bottom: 2%;
 }
 
-div#registro form{
-  width: 300px;
-}
-
-div#registro input[type=text],input[type=password]{
+div#home div#registro input[type=text],input[type=password]{
   background-color: transparent;
   border: none;
   border-bottom: 2px solid #F6F1F1;;
@@ -78,20 +120,22 @@ div#registro input[type=text],input[type=password]{
   width: 80%;
 }
 
-div#registro input[type=submit]{
+div#home div#registro input[type=submit]{
   width: 80%;
   color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 90%;
+  border-radius: 6px;
   border: none;
-  padding: 5px;
-  background: rgba(149,153,145,1);
-background: -moz-linear-gradient(-45deg, rgba(149,153,145,1) 0%, rgba(70,71,70,1) 100%);
-background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(149,153,145,1)), color-stop(100%, rgba(70,71,70,1)));
-background: -webkit-linear-gradient(-45deg, rgba(149,153,145,1) 0%, rgba(70,71,70,1) 100%);
-background: -o-linear-gradient(-45deg, rgba(149,153,145,1) 0%, rgba(70,71,70,1) 100%);
-background: -ms-linear-gradient(-45deg, rgba(149,153,145,1) 0%, rgba(70,71,70,1) 100%);
-background: linear-gradient(135deg, rgba(149,153,145,1) 0%, rgba(70,71,70,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959991', endColorstr='#464746', GradientType=1 );
--webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+  padding: 7px;
+  margin-top: 10px;
+  background: rgba(21,147,147,1);
+  background: -moz-linear-gradient(top, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(21,147,147,1)), color-stop(100%, rgba(17,133,133,1)));
+  background: -webkit-linear-gradient(top, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  background: -o-linear-gradient(top, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  background: -ms-linear-gradient(top, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  background: linear-gradient(to bottom, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#159393', endColorstr='#118585', GradientType=0 );
+
 }

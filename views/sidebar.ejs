@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/css/materialize.min.css">
+
+<%if(typeof user!="undefined"){%>
+  <span style="display:none" id="<%=user%>" class="ide"></span>
+  <div id="subscribe" name="<%=info.grupo%>"><span>Suscribirme a este grupo&nbsp;</span><i class="fa fa-user-plus" aria-hidden="true"></i></div>
+<%}%>
+ <h2><%=info.grupo%></h2>
+ <div id="info">
+   <span><i class="material-icons">details</i><%=info.materia%></span>
+   <span><i class="material-icons">details</i><%=info.profesor%></span>
+ </div>
+
+ <div id="subir">
+   <form  action="/grupos/<%=info.grupo%>/nuevo-post" method="POST" enctype="multipart/form-data">
+     <span for="titulo">Comentario: </span><br/>
+     <textarea id="titulo" name="titulo" required></textarea><br/>
+     <div id="añadir-file">
+       <span for="archivo">Añadir un archivo o una imagen&nbsp;<i class="fa fa-upload" aria-hidden="true"></i> </span><br/>
+       <input class="subir" type="file" id="archivo" name="archivo" value="Subir"/><br/>
+     </div>
+     <input class="boton" type="submit" value="Publicar" id="pub">
+   </form>
+  </div>
+
+   <div id="miembros">
+   <p>Miembros</p>
+   <ul id="miembros" class="collection">
+     <%for(i=info.miembros.length-1; i>=0; i--){%>
+       <!--<li><a href="/perfil/<%=info.miembros[i].id%>"><p><%=info.miembros[i].nombre%></p></a></li>-->
+      <li class="collection-item avatar">
+      <%if(typeof info.miembros[i].extension!="undefined" || info.miembros[i].extension!=""){%>
+        <img src="/imagenes/<%=info.miembros[i]._id%>.<%=info.miembros[i].extension%>" alt="" class="circle">
+      <%}%>
+      <%if(typeof info.miembros[i].extension=="undefined" || info.miembros[i].extension==""){%>
+        <img src="/imagenes/usuario.png" alt="" class="circle">
+      <%}%>
+      <span class="title"><%=info.miembros[i].nombre%></span>
+      <p><a href="/perfil/<%=info.miembros[i].id%>">Ver perfil</a></p>
+      <i class=" secondary-content material-icons">account_circle</i>
+    </li>
+     <%}%>
+   </ul>
+  </div>

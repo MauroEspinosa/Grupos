@@ -22,7 +22,7 @@ a{
 }
 
 div#container{
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.6);
   color: white;
   font-family: 'Raleway', sans-serif;
   width: 80%;
@@ -47,7 +47,15 @@ div#container div#foto form{
 }
 
 div#container div#foto form div#subir{
-  background-color: #157757;
+  background: rgba(21,147,147,1);
+  background: -moz-linear-gradient(top, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(21,147,147,1)), color-stop(100%, rgba(17,133,133,1)));
+  background: -webkit-linear-gradient(top, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  background: -o-linear-gradient(top, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  background: -ms-linear-gradient(top, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  background: linear-gradient(to bottom, rgba(21,147,147,1) 0%, rgba(17,133,133,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#159393', endColorstr='#118585', GradientType=0 );
+  border-radius: 6px;
   width: 100%;
   height: 20px;
   margin-top: 15px;
@@ -71,11 +79,14 @@ div#container div#foto div#subir input#foto{
   opacity: 0;
   width: 100%;
   margin-top: -20px;
+  cursor: pointer;
 }
 
 div#container div#foto form input#btn_subir{
+  border-radius: 6px;
   width: 103.5%;
   padding: 7px;
+  cursor: pointer;
 }
 
 div#container div#nombre-social{
@@ -215,6 +226,7 @@ div#container div#grupos ul li{
 }
 
 div#container div#grupos ul li i{
+  color:red;
   font-size: 90%;
   margin-left: 3px;
   color: #C00000;
