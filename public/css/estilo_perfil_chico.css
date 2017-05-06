@@ -67,9 +67,6 @@ div#container div#top div#foto{
  height: 290px;
  border-radius: 100%;
  margin: auto;
- display: flex;
- align-items: flex-end;
- justify-content: flex-start;
 }
 
 div#container div#nombre_desc p{

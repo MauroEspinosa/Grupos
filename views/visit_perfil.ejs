@@ -30,7 +30,7 @@
 
 <div class="chico" id="top">
   <%if(doc.extension=="" || doc.extension==null){%>
-      <div><img style="background-image:url('/imagenes/usuario.png')"/></div>
+      <div id="foto" style="background-image:url('/imagenes/usuario.png')"/></div>
   <%}%>
   <%if(doc.extension=="jpg" || doc.extension=="png"){%>
       <div id="foto" style="background-image:url('/imagenes/<%=doc._id%>.<%=doc.extension%>')"></div>

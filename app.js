@@ -255,6 +255,7 @@ app.get("/perfil/:id",function(req,res){
   if(req.session.user==req.params.id){
     User.findOne({_id:req.params.id},function(err,doc){
       res.render("perfil",{doc:doc});
+      console.log(doc);
     });
   }
   if(req.session.user!=req.params.id){
