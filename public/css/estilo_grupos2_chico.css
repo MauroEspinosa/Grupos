@@ -5,7 +5,10 @@
 body{
  margin: 0;
  padding: 0;
- background-color: #F3F3F3;
+ background-image: url("fondo.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-attachment: fixed;
 }
 
 img{
@@ -16,8 +19,8 @@ div#container{
 }
 
 div#container div#nav{
-  background-color: #159393;
-  padding: 1.5%;
+  background-color: #2A2A2A;
+  padding: 2.5%;
   position: fixed;
   width: 100%;
   top: 0;
@@ -32,13 +35,14 @@ div#container div#nav i{
   font-size: 130%;
   color: white;
   margin-left: 5px;
+  margin-top: 2px;
 }
 
 div#container div#nav ul li{
   display: inline;
   margin-left: 10px;
   font-family: 'Pavanam', sans-serif;
-  font-size: 120%;
+  font-size: 130%;
 }
 
 div#container div#nav ul li a{
@@ -125,8 +129,9 @@ div#container div#single-head div#subir form{
   margin-bottom: 13px;
 }
 
-div#container div#single-head div#subir form label{
+div#container div#single-head div#subir form span{
   font-family: 'Raleway', sans-serif;
+  font-size: 110%;
 }
 
 div#container div#single-head textarea{
@@ -147,8 +152,8 @@ div#container div#single-head div#subir form div#añadir-file{
   margin-bottom: 8px;
   font-family: 'Pavanam', sans-serif;
   font-size: 95%;
+  height: 4%;
   color: black;
-  padding-bottom: 2px;
   border-radius: 6px;
   background: rgba(255,255,255,1);
   background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(199,199,199,1) 100%);
@@ -174,7 +179,8 @@ div#container div#single-head div#subir form input[type=submit]{
   font-family: 'Raleway', sans-serif;
   border: none;
   color: black;
-  font-size: 95%;
+  padding: 1%;
+  font-size: 100%;
   background: rgba(255,255,255,1);
   background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 1%, rgba(199,199,199,1) 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(1%, rgba(255,255,255,1)), color-stop(100%, rgba(199,199,199,1)));
@@ -226,59 +232,6 @@ div#container div#single-head ul#miembros li{
   height: 30px;
   background-color: #F0F0F0;
 }
-/*
-div#subir{
-  border: 1px solid #B8B7B7;
-  margin-top: 10px;
-  border-radius: 10px;
-  width: 98%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-div#subir form{
-  margin: 0;
-}
-
-div#subir div#submit{
-  display: flex;
-  justify-content: flex-end;
-}
-
-div#subir form .boton{
-  border: none;
-  font-family: 'Raleway', sans-serif;
-  padding: 7px;
-  margin: 5px;
-  text-align: right;
-  cursor: pointer;
-  background-color: #575656;
-  color: #F2F2F2;
-}
-
-div#subir form .subir{
-  font-family: 'Raleway', sans-serif;
-  padding: 4px;
-  margin-top: 5px;
-  background-color: #575656;
-  color: #F2F2F2;
-}
-
-div#subir form input[type=text]{
-  width: 320px;
-  border: none;
-  border-bottom: 1px solid black;
-}
-
-div#subir form input[type=file]{
-  width: 413px;
-  background-color: #575656;
-}
-
-div#subir form span{
-  font-family: 'Raleway', sans-serif;
-}
-*/
 
 div#items, div#vacio{
   width: 90%;
@@ -305,27 +258,22 @@ div#container div#suscribete h2{
 }
 
 div.archivos{
-  width: 90%;
+  width: 97%;
   margin-top: 30px;
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
-  background-color: white;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 3px;
 }
 
 div.archivos p{
-  border-bottom: 1px solid #B8B7B7;
-  margin-bottom: 3px;
+  /*border-bottom: 1px solid #B8B7B7;*/
   padding: 2%;
   font-family: 'Raleway', sans-serif;
-  font-size: 110%;
-}
-
-div.archivos img{
-  max-height: 500px;
-  margin-left: auto;;
-  margin-right: auto;
+  font-size: 125%;
 }
 
 div.archivos div#imagen{
@@ -334,22 +282,43 @@ div.archivos div#imagen{
   justify-content: center;
 }
 
+div.archivos img{
+  max-height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 div#container div#items div.archivos a{
   font-size: 180%;
   text-decoration: underline;
 }
 
-div#container div#items div.archivos input.respuesta{
-  width: 70%;
-  margin-left: 15px;
+div#container div#items div.archivos ul li:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-div#container div#items div.archivos ul.respuestas{
-  padding-left: 5%;
+div#container div#items div.archivos textarea.respuesta{
+  width: 95%;
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  height: 48px;
+  background-color: transparent;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+div#container div#items div.archivos input[type=button]{
+  margin-top: 10px;
+  margin-bottom: 15px;
+  height: 30px;
+  padding: 0;
+  width: 20%;
+  margin-left: 77%;
 }
 
 div#container div#items div.archivos ul.respuestas li div.respuesta{
-  border-top: 1px solid #CFCFCF;
   padding-top: 6px;
   padding-bottom: 6px;
 }

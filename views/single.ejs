@@ -126,7 +126,7 @@ $(document).ready(function(){
         <div id="imagen">
         <img src="/imagenes/<%=imagenes[i]._id%>.<%=imagenes[i].extension%>">
         </div>
-      <%}else{%>
+      <%}if(imagenes[i].extension!="" && imagenes[i].extension!="jpg" && imagenes[i].extension!="png"){%>
         <a href="/descargar/<%=imagenes[i]._id%>"><%=imagenes[i].nombre%></a></br>
       <%}%>
       <textarea class="respuesta form-control" id="<%=imagenes[i]._id%>" placeholder="Responder" required/></textarea>

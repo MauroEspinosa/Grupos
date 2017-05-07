@@ -26,7 +26,7 @@ div#nav{
   margin-right: 10px;
   padding-bottom: 2px;
   text-align: right;
-  font-size: 120%;
+  font-size: 130%;
 }
 
 div#nav ul{
@@ -56,15 +56,14 @@ div#container div#top{
   margin-top: -32px;
   margin-left: auto;
   margin-right: auto;
-  width: 290px;
   margin-bottom: 10px;
 }
 
 div#container div#top div#foto{
  background-size: cover;
  background-position: center;
- width: 290px;
- height: 290px;
+ width: 250px;
+ height: 250px;
  border-radius: 100%;
  margin: auto;
 }
@@ -72,8 +71,8 @@ div#container div#top div#foto{
 div#container div#nombre_desc p{
   font-family: 'Raleway', sans-serif;
   font-size: 140%;
-  margin-left: 20px;
-  margin-top: 20px;
+  margin-left:5%;
+  margin-top: 30px;
   margin-bottom: 5px;
 }
 
@@ -83,7 +82,7 @@ div#container div#nombre_desc textarea#descripcion{
   height: 70px;
   max-height: 70px;
   border: none;
-  margin-left: 5.8%;
+  margin-left: 5%;
   font-family: 'Raleway', sans-serif;
   background-color: transparent;
   color: white;
