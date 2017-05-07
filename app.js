@@ -15,7 +15,10 @@ var path = require ('path');
 //-----------------configuracion---------------
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(formidable.parse({keepExtensions:true}));
+app.use(formidable.parse({
+  keepExtensions:true,
+  uploadDir: path.join(process.cwd()+"/public/imagenes")
+}));
 app.use(cookieSession({
   name:"session",
   keys:["key1","key2"]
