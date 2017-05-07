@@ -79,7 +79,7 @@ div#container div#nombre_desc p{
 div#container div#nombre_desc textarea#descripcion{
   width: 90%;
   max-width: 100%;
-  height: 70px;
+  height: auto;
   max-height: 70px;
   border: none;
   margin-left: 5.8%;
@@ -102,22 +102,26 @@ div#container div#redes i:first-child{
 }
 
 div#container div#grupos{
-  width: 290px;
-  height: 150px;
+  width: 90%;
   overflow: scroll;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 div#container div#grupos p{
   margin-left: 0px;
   margin-bottom: 5px;
+  font-size: 110%;
 }
 
 div#container div#grupos ul{
-  padding-left: 20px;
+  padding:0;
   margin: 0;
+}
+
+div#container div#grupos ul li:first-child{
+  margin-left: 0;
 }
 
 div#container div#grupos ul li{
@@ -125,6 +129,9 @@ div#container div#grupos ul li{
   margin-left: 10px;
   font-family: 'Pavanam', sans-serif;
   padding-bottom: 5px;
+  float: left;
+  font-size: 90%;
+  list-style-type: none;
 }
 
 div#container div#grupos ul li i{
