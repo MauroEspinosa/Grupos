@@ -300,8 +300,8 @@ div.archivos div#imagen{
 }
 
 div#container div#items div.archivos a{
-  color: white;
   font-family: 'Raleway', sans-serif;
+  font-size: 180%;
 }
 
 div#container div#items div.archivos input[type=button]{

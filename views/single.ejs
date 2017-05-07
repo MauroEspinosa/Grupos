@@ -34,17 +34,11 @@ $(document).ready(function(){
   $("div#container div#single-head div#subscribe").hide();
 
   $("div#container div#nav i").click(function(){
-    var margen=$("div#container div#single-head").css("margin-left");
-    if(margen=="-1000px"){
       $("div#container div#single-head").animate({marginLeft:"0px"},800);
-    }
-    if(margen=="0px"){
-      $("div#container div#single-head").animate({marginLeft:"-1000px"},800);
-    }
   });
 
-  $("div#menu i#close").click(function(){
-      $("div#menu").animate({marginLeft:"-1000px"},800);
+  $("div#container div#single-head i#cerrar").click(function(){
+      $("div#container div#single-head").animate({marginLeft:"-1000px"},800);
   });
 
   socket.on("nuevo",function(data){

@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/css/materialize.min.css">
 
 <%if(typeof user!="undefined"){%>
+  <i class="fa fa-times chico" id="cerrar" aria-hidden="true"></i>
   <span style="display:none" id="<%=user%>" class="ide"></span>
   <div id="subscribe" name="<%=info.grupo%>"><span>Suscribirme a este grupo&nbsp;</span><i class="fa fa-user-plus" aria-hidden="true"></i></div>
 <%}%>

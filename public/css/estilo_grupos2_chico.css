@@ -64,7 +64,6 @@ label{
 
 div#single-head{
   position: relative;
-  top: 34px;
   margin-left: -1000px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -81,6 +80,13 @@ div#single-head{
   background: -ms-linear-gradient(-45deg, rgba(20,19,19,1) 0%, rgba(59,59,59,1) 100%);
   background: linear-gradient(135deg, rgba(20,19,19,1) 0%, rgba(59,59,59,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141313', endColorstr='#3b3b3b', GradientType=1 );
+}
+
+div#single-head i.chico{
+  position: absolute;
+  font-size: 140%;
+  right: 10px;
+  top: 10px;
 }
 
 div#container div#single-head div#subscribe{
